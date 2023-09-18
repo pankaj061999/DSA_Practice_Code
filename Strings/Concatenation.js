@@ -85,3 +85,36 @@ const string1 = "Listentttt";
 const string2 = "Silenttttt";
 
 console.log(areAnagrams(string1, string2)); // Output: true
+
+// #3.) Longest Common Prefix
+
+// To find the longest common prefix of a list of strings in JavaScript, you can use the following approach:
+
+function longestCommonPrefix(strs) {
+  if (strs.length === 0) {
+    return "";
+  }
+
+  // Sort the array of strings to bring the shortest string to the front.
+  strs.sort((a, b) => a.length - b.length);
+
+  const shortest = strs[0];
+
+  for (let i = 0; i < shortest.length; i++) {
+    const char = shortest[i];
+
+    for (let j = 1; j < strs.length; j++) {
+      if (strs[j][i] !== char) {
+        console.log("Pankaj", shortest.slice(0, i));
+        return shortest.slice(0, i);
+      }
+    }
+  }
+
+  return shortest;
+}
+
+// Example usage:
+const strings = ["flower", "flow", "flight"];
+const commonPrefix = longestCommonPrefix(strings);
+console.log(commonPrefix);
