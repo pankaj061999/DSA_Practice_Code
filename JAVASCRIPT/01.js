@@ -39,16 +39,16 @@ const userDetails = {
   },
 };
 
-userDetails.printaddress();
+// userDetails.printaddress();
 
 const userDetails2 = {
   name: "arjun Meena",
   age: 24,
   address: "new delhi",
 };
-userDetails.printaddress.call(
-  userDetails2
-); /* here we are using printaddress function and now this keyword target to userDetails2 object */
+// userDetails.printaddress.call(
+//   userDetails2
+// ); /* here we are using printaddress function and now this keyword target to userDetails2 object */
 
 const userDetails3 = {
   name: "Pankaj Kumar Meena",
@@ -60,7 +60,7 @@ const userDetails3 = {
 
 // or we can call this function seprate
 
-userDetails3.printaddress();
+// userDetails3.printaddress();
 
 const person1 = { name: "Alice", age: 23 };
 const person2 = { name: "Bob" };
@@ -70,5 +70,31 @@ function greet(greeting) {
   console.log(`${greeting}, ${this.name}`);
 }
 
-greet.call(person1, "pankaj"); // Output: Pankaj, Alice
-greet.call(person2, "Hi"); // Output: Hi, Bob
+// greet.call(person1, "pankaj"); // Output: Pankaj, Alice
+// greet.call(person2, "Hi"); // Output: Hi, Bob
+
+/* 3.)  Bind method :- the bind() method has to be used to prevent losing this.
+
+In the following example, the person object has a display method. In the display method, this refers to the person object: */
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  display: function () {
+    console.log(this.firstName + " " + this.lastName);
+  },
+};
+
+person.display();
+
+/* When a function is used as a callback, this is lost.
+
+This example will try to display the person name after 3 seconds, but it will display undefined instead: */
+setTimeout(person.display, 3000);
+
+/* The bind() method solves this problem.
+
+In the following example, the bind() method is used to bind person.display to person.
+
+This example will display the person name after 3 seconds: */
+let display = person.display.bind(person);
+setTimeout(display, 3000);
