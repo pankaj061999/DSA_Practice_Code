@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../Insertions/index.js">
+        let array = [1, 2,11, 99, 23, 54, 32, 89, 45];
+
+        array.forEach(element => {
+            document.write(element + " ")
+        });
+
+        for(let i =0; i<array.length; i++){
+            document.write("Pankaj")
+        }
+
+       
+        function getFunctionCall(){
+            let elem = document.getElementById("elementby").value;
+            alert(` call ${elem}` )
+           
+        }
+    </script>
+</head>
+<body>
+    <input id="elementby" />
+    <button onclick="getFunctionCall()">Click</button>
+</body>
+</html>
