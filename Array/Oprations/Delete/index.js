@@ -29,3 +29,27 @@ const deleteDuplicateElementInArray = (array, element) => {
 const data = [12, 34, 2, 89, 2, 34, 78];
 let DeleteElement = 34;
 deleteDuplicateElementInArray(data, DeleteElement);
+
+/* 3.) remove a duplicate element */
+function removeDuplicates(arr) {
+  const uniqueArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let isDuplicate = false;
+    console.warn("duplicate eleemnt ===>>", uniqueArr);
+    for (let j = 0; j < uniqueArr.length; j++) {
+      if (arr[i] === uniqueArr[j]) {
+        isDuplicate = true;
+        break;
+      }
+    }
+    if (!isDuplicate) {
+      uniqueArr.push(arr[i]);
+    }
+  }
+  return uniqueArr;
+}
+
+const data1 = [12, 34, 2, 89, 2, 34, 78];
+const uniqueData = removeDuplicates(data1);
+
+console.log("Unique Elements:", uniqueData);
