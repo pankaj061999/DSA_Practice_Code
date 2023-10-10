@@ -53,3 +53,22 @@ const data1 = [12, 34, 2, 89, 2, 34, 78];
 const uniqueData = removeDuplicates(data1);
 
 console.log("Unique Elements:", uniqueData);
+
+var removeElement = function (nums, val) {
+  let index = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      nums[index] = nums[i];
+      index++;
+    }
+  }
+  nums.length = index;
+  return nums;
+};
+
+const nums = [3, 2, 2, 3];
+const val = 3;
+
+const t1 = removeElement(nums, val);
+console.warn(t1);
