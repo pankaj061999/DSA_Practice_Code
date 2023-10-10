@@ -1,5 +1,5 @@
 // 1.) linear Searching algo method It works on both sorted and unsorted lists.Time complexity: O(n) in the worst case.
-
+console.time("linear Searching");
 const SearchElement = (arr, element) => {
   let index = undefined;
   for (let i = 0; i < arr.length - 1; i++) {
@@ -13,9 +13,10 @@ const SearchElement = (arr, element) => {
 const arry = [21, 1, 23, 45, 65, 34, 89, 8, 2];
 const element = 45;
 SearchElement(arry, element);
+console.timeEnd("linear Searching");
 
 // 2.)  Binary Search is a searching technique which works on the Divide and Conquer approach  It is used to search for any element in a sorted array. Compared with linear, binary search is much faster with a Time Complexity of O(logN), whereas linear search works in O(N) time
-
+console.time("binarySearch");
 const binarySearchingAlgo = (arr, element) => {
   let start = 0;
   let end = arr.length - 1;
@@ -42,3 +43,4 @@ const data = [1, 2, 21, 23, 34, 45, 65, 8, 89];
 const SearchNuber = 45;
 
 const result = binarySearchingAlgo(data, SearchNuber);
+console.timeEnd("binarySearch");
