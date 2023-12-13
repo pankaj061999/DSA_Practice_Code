@@ -11,6 +11,12 @@ function countDigits(n) {
   return count;
 }
 
+// second solution
+
+const checkPrintNuberCOunt = (n) => {
+  return n.toString().length;
+};
+
 let n = 12345;
 // console.log("Number of digits in " + n + " is " + countDigits(n));
 
@@ -32,20 +38,18 @@ console.log("reverse number ====>>", reverseFunc(a));
 
 //3.) Check if a number is Palindrome or Not
 
-const checkPalindromeNumber = (num) => {
-  const numStr = num.toString();
-  const len = numStr.length;
-
-  for (let i = 0; i < len / 2; i++) {
-    if (numStr[i] !== numStr[len - 1 - i]) {
-      return false;
-    }
+var isPalindrome = function (x) {
+  if (x < 0) {
+    return false;
   }
-  return true;
+
+  let str = x.toString();
+  let reversed = str.split("").reverse().join("");
+
+  return str === reversed;
 };
 
-const num = 1221;
-console.log(checkPalindromeNumber(num)); // Output: true
+console.log(isPalindrome(121)); // Output: true
 
 // Find GCD of two numbers
 
