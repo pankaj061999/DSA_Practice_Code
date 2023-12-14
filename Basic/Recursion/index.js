@@ -24,18 +24,6 @@ const displayNNumber = (n) => {
 
 displayNNumber(6);
 
-// 3.) Print N to 1 using Recursion
-
-const displayNNumber1 = (n) => {
-  if (n <= 0) {
-    return; // Base case: stop recursion when n <= 0
-  }
-  //   console.log(n); // Print the current number
-  displayNNumber(n - 1); // Print numbers from 1 to n-1
-};
-
-displayNNumber1(6);
-
 // 4.) Sum of first N Natural Numbers
 
 const sumOfNNuber = (n) => {
@@ -45,7 +33,15 @@ const sumOfNNuber = (n) => {
   return n + sumOfNNuber(n - 1);
 };
 
-console.log(sumOfNNuber(9));
+console.log(sumOfNNuber(10));
+
+// const sumOfNNuber1 = (n) => {
+//   return (n * (n + 1)) / 2;
+// };
+
+// console.log(sumOfNNuber1(10));
+
+// time complixty = O(1) and space Complixity = O(1)
 
 // 5.) Factorial of a Number : Iterative and Recursive
 
@@ -98,9 +94,9 @@ console.log(isPalindrome("pankaj")); // Output: false
 
 function fibonacci(n) {
   if (n <= 1) {
-    return n; 
+    return n;
   }
-  return fibonacci(n - 1) + fibonacci(n - 2); 
+  return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
 function generateFibonacciSeries(count) {
