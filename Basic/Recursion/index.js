@@ -109,3 +109,4 @@ function generateFibonacciSeries(count) {
 
 const n = 20;
 console.log(generateFibonacciSeries(n));
+
