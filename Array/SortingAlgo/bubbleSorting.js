@@ -30,3 +30,30 @@ console.log("Sorted Array:", result);
 
 // my out put Print array value ===>> [ 1,  1, 23, 23, 78, 24, 24]
 // console.timeEnd("bubblesorting");
+
+// recuarsion format
+const recursiveBubbleSort = (arr, n) => {
+  // Base case: If array has only one element or empty, it's already sorted
+  if (n === 1) {
+    return;
+  }
+
+  // One pass of bubble sort. After this pass, the largest element is moved to the end.
+  for (let i = 0; i < n - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      // Swap elements if they are in the wrong order
+      let temp = arr[i];
+      arr[i] = arr[i + 1];
+      arr[i + 1] = temp;
+    }
+  }
+
+  // Recursively sort the remaining elements
+  recursiveBubbleSort(arr, n - 1);
+};
+
+// Example usage:
+const array1 = [64, 34, 25, 12, 22, 11, 90];
+recursiveBubbleSort(array1, array1.length);
+
+console.log("Sorted array:", array1);

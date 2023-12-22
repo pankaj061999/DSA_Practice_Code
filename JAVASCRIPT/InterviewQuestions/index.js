@@ -6,7 +6,7 @@ function addNumbers(num1, num2) {
 
 // Example usage:
 const result = addNumbers(5, 7);
-console.log(result); // Output: 12
+// console.log(result); // Output: 12
 
 //   Write a JavaScript program to find the maximum number in an array.
 function findMaxNumber(arr) {
@@ -28,7 +28,7 @@ function findMaxNumber(arr) {
 // Example usage:
 const numbers = [5, 12, 8, 24, 2, 19, 9];
 const maxNumber = findMaxNumber(numbers);
-console.log(`The maximum number is: ${maxNumber}`);
+// console.log(`The maximum number is: ${maxNumber}`);
 
 // 3.) Write a JavaScript function to check if a given string is a palindrome (reads the same forwards and backwards).
 function isPalindrome(str) {
@@ -49,8 +49,8 @@ function isPalindrome(str) {
 const testString1 = "racecar";
 const testString2 = "hello";
 
-console.log(`Is "${testString1}" a palindrome? ${isPalindrome(testString1)}`);
-console.log(`Is "${testString2}" a palindrome? ${isPalindrome(testString2)}`);
+// console.log(`Is "${testString1}" a palindrome? ${isPalindrome(testString1)}`);
+// console.log(`Is "${testString2}" a palindrome? ${isPalindrome(testString2)}`);
 
 // 4.) Write a JavaScript program to reverse a given string.
 function reverseString(inputString) {
@@ -65,8 +65,8 @@ function reverseString(inputString) {
 const originalString = "Hello, World!";
 const reversed = reverseString(originalString);
 
-console.log(`Original string: ${originalString}`);
-console.log(`Reversed string: ${reversed}`);
+// console.log(`Original string: ${originalString}`);
+// console.log(`Reversed string: ${reversed}`);
 
 // 5.) Write a JavaScript function that takes an array of numbers and returns a new array with only the even numbers.
 
@@ -161,3 +161,34 @@ const largest = findLargestInNestedArray(nestedArray);
 console.log("The largest element in the nested array is:", largest);
 
 // 9.)
+const f1 = (arr) => {
+  const len = arr.length;
+  let result = [];
+  let a2 = [];
+
+  for (let i = 0; i < len; i++) {
+    if (arr[i] === 0) {
+      result.push(arr[i]);
+    } else {
+      a2.push(arr[i]);
+    }
+  }
+
+  return result.concat(a2);
+};
+
+const arr = [1, 4, 0, 4, 6, 30, 3, 0, 3, 7, 0, 70, 0];
+
+console.log(f1(arr));
+
+console.log(A);
+
+var A = 3;
+
+const p1 = new Promise((resolve, reject) => {
+  resolve("success");
+});
+
+let res = p1.then((data) => console.log(data));
+
+console.log(res);
