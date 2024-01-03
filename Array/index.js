@@ -2,15 +2,7 @@ const a1 = [1, 4, 2, 8, 3, 9];
 
 const f1 = a1.reduce((acc, curr) => acc + curr, 0);
 
-console.log(
-  "Print reduce function",
-  f1,
-  a1.at(2),
-  a1.pop(),
-  a1,
-  a1.push(12),
-  a1.shift()
-);
+console.log("Print reduce function", f1, a1.at(2), a1.pop(), a1, a1.push(12), a1.shift());
 
 let p = [1, 2, 3, 4, 5, 6, 7];
 

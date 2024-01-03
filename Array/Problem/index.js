@@ -30,3 +30,21 @@ let A1 = [2, 5, 1, 3, 8, 10, 12];
 console.log(f1(A1));
 
 //  O(n log n)  time Complixity
+
+const removeDuplicates = (nums) => {
+  const hash = {};
+  const result = [];
+
+  for (const num of nums) {
+    console.log("Peint arrau ==>>", num, hash, typeof hash);
+    if (!hash[num]) {
+      hash[num] = true;
+      result.push(num);
+    }
+  }
+
+  return result;
+};
+
+let arr1 = [1, 1, 2, 2, 2, 3, 3];
+console.log("Unique array: ", removeDuplicates(arr1));
