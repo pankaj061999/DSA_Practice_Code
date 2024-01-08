@@ -30,17 +30,17 @@ const hashFunc = (arr, quer) => {
 let arr = [1, 2, 1, 4, 2, 8, 0];
 let quer = [1, 4, 5, 2, 10];
 
-console.log(hashFunc(arr, quer));
+// console.log(hashFunc(arr, quer));
 
 // Hashing a given string to find charchter repeation
 
 const CharacterHashFunc = (str, stringArray) => {
   const createArray = Array.from({ length: 26 }, () => 0);
-  console.log("create a array ==>>", createArray);
+  // console.log("create a array ==>>", createArray);
 
   for (let i = 0; i < str.length; i++) {
     const char = str[i].toLowerCase();
-    console.log("Print lower case all elemnent ==>>", char);
+    // console.log("Print lower case all elemnent ==>>", char);
     const charCode = char.charCodeAt(0) - 97;
     console.log("Charckter code===>>", charCode);
 
