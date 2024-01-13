@@ -177,7 +177,7 @@ const finalSortedArraySet = (arr1, arr2) => {
 const Ar3 = [0, 1, 2, 3, 4, 5, 3];
 const Ar4 = [2, 3, 4, 4, 5, 5, 0];
 
-console.log("Print final Sorted array ====>>", finalSortedArraySet(Ar3, Ar4));
+// console.log("Print final Sorted array ====>>", finalSortedArraySet(Ar3, Ar4));
 
 // Find the missing number in an array
 
@@ -200,4 +200,140 @@ const findMissingNo = (arr, n) => {
 
 const T1 = [1, 3, 4, 5, 7, 9],
   N = 9;
-console.warn("Print missing nuber ====>>>", findMissingNo(T1, N));
+// console.warn("Print missing nuber ====>>>", findMissingNo(T1, N));
+
+//9.) Count Maximum Consecutive One’s in the array
+
+const countConsecutiveNuber = (nums) => {
+  // if (arr.length < 2) {
+  //   return 1;
+  // }
+
+  // let countrep = 0;
+
+  // for (let i = 0; i < arr.length - 1; i++) {
+  //   if (arr[i] === arr[i + 1]) {
+  //     countrep++;
+  //     console.log("hiii", i, arr[i]);
+  //   }
+  // }
+
+  // return countrep;
+  let maxCount = 0;
+  let currentCount = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === 1) {
+      currentCount++;
+      maxCount = Math.max(maxCount, currentCount);
+      console.log("hiii", currentCount, maxCount);
+    } else {
+      currentCount = 0;
+    }
+  }
+
+  return maxCount;
+};
+
+const T2 = [1, 3, 4, 5, 7, 9, 1, 2, 1, 1, 1, 1];
+
+// console.log("Print count repeation ==>>", countConsecutiveNuber(T2));
+
+//Q 10). Find the number that appears once, and the other numbers twice
+
+const findNumberAppearsOnce = (arr) => {
+  let result = 0;
+
+  for (let num of arr) {
+    result ^= num;
+    console.log("Print ", result ^ num, num, result);
+  }
+
+  return result;
+};
+
+const T3 = [1, 2, 1, 1, 1];
+
+// console.log("Print count repeation ==>>", findNumberAppearsOnce(T3));
+
+// const A = [1, [2, [3, [4], 5]]]
+
+//[1, 2,3, 4, 5]
+const flattenArray = (arr) => {
+  let result = [];
+
+  arr.forEach((element) => {
+    console.log("Print element before", element);
+    if (Array.isArray(element)) {
+      result = result.concat(flattenArray(element));
+      console.log("Print element", Array.isArray(element), element, flattenArray(element));
+    } else {
+      result.push(element);
+    }
+  });
+
+  return result;
+};
+
+const A = [1, [2, [3, [4], 5]]];
+// const flattenedArray = flattenArray(A);
+// console.log(flattenedArray); // Output: [1, 2, 3, 4, 5]
+
+// {2,2,1} count nuber repation is one
+
+const CountoneReaptionNo = (arr) => {
+  const maxNo = Math.max(...arr);
+  const minNo = Math.min(...arr);
+  // console.log("Print maxNo ==>>", maxNo);
+
+  const res = Array.from({ length: maxNo - minNo + 1 }, () => 0);
+
+  // console.log("Print res before===>>", res);
+  for (let i = 0; i < arr.length; i++) {
+    res[arr[i] - minNo] += 1;
+
+    // console.log("Print res ===>>", res);
+  }
+
+  let result = [];
+
+  for (let i = 0; i < res.length; i++) {
+    if (res[i] === 1) {
+      result.push(i + minNo);
+    }
+  }
+
+  return result[0];
+};
+
+const B1 = [2, 2, 4, 1, 4];
+CountoneReaptionNo(B1);
+
+// solution second
+var singleNumber = function (nums) {
+  let arr = nums.sort((a, b) => a - b); // Create a copy of the array and sort it
+
+  console.log("Print arr before", arr);
+
+  for (let i = 0; i <= nums.length - 1; i += 2) {
+    // Iterate by 2
+    if (arr[i] !== arr[i + 1]) {
+      console.log("Print arr if condition", arr[i], arr[i + 1]);
+      return arr[i];
+    }
+  }
+
+  console.log("Print arr", arr);
+
+  return arr[arr.length - 1]; // Return the first non-matching pair
+};
+
+// Q.12) Longest Subarray with given Sum K(Positives)
+
+const longestSubArray = (arr, k) => {
+  
+};
+
+const B2 = [2, 3, 5],
+  sum = 5;
+longestSubArray(B2, sum);
