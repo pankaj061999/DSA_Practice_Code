@@ -330,10 +330,64 @@ var singleNumber = function (nums) {
 
 // Q.12) Longest Subarray with given Sum K(Positives)
 
+// solution 1.) Brute-force approach
 const longestSubArray = (arr, k) => {
-  
+  let maxMiumNo = 0;
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    let sum = 0;
+    for (let j = i; j < arr.length; j++) {
+      sum += arr[j];
+      if (k == sum) {
+        maxMiumNo = Math.max(maxMiumNo, j - i + 1);
+        // console.log("Print k  value", k, sum, maxMiumNo);
+        // return maxMiumNo;
+      }
+    }
+  }
+  console.log("Maximum Sub Arry length", maxMiumNo);
+  return maxMiumNo;
 };
 
-const B2 = [2, 3, 5],
-  sum = 5;
+const B2 = [2, 3, 5, 1, 9],
+  sum = 10;
 longestSubArray(B2, sum);
+
+// time complixity is O(n^2)
+
+// solution 2.) Accumulate sum based or (Prefix sum)
+
+const longestSubArrayBasedonAccumulatesum = (nums, k) => {
+  let count = 0;
+  let sum = 0;
+  let sumCountMap = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+
+    if (sum === k) {
+      count++;
+    }
+
+    if (sumCountMap.has(sum - k)) {
+      count += sumCountMap.get(sum - k);
+    }
+
+    // Increment the count for the current sum
+    if (sumCountMap.has(sum)) {
+      sumCountMap.set(sum, sumCountMap.get(sum) + 1);
+    } else {
+      sumCountMap.set(sum, 1);
+    }
+  }
+
+  // return count;
+  console.log("Print prefix array", count, sumCountMap);
+};
+
+let B3 = [1, 2, 1, 2, 1];
+let sum1 = 3;
+longestSubArrayBasedonAccumulatesum(B3, sum1);
+
+// time complixity is O(N)
+// and space complixity is O(1)
