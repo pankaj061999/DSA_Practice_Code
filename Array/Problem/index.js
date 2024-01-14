@@ -351,12 +351,11 @@ const longestSubArray = (arr, k) => {
 
 const B2 = [2, 3, 5, 1, 9],
   sum = 10;
-longestSubArray(B2, sum);
+// longestSubArray(B2, sum);
 
 // time complixity is O(n^2)
 
-// solution 2.) Accumulate sum based or (Prefix sum)
-
+// solution 2.) Accumulate sum based or (Prefix sum) and Hashing
 const longestSubArrayBasedonAccumulatesum = (nums, k) => {
   let count = 0;
   let sum = 0;
@@ -387,7 +386,93 @@ const longestSubArrayBasedonAccumulatesum = (nums, k) => {
 
 let B3 = [1, 2, 1, 2, 1];
 let sum1 = 3;
-longestSubArrayBasedonAccumulatesum(B3, sum1);
+// longestSubArrayBasedonAccumulatesum(B3, sum1);
 
 // time complixity is O(N)
 // and space complixity is O(1)
+
+// Two Sum : Check if a pair with given sum exists in Array
+// solution 1.)
+
+let checkSumPairExist = (arr, targetSum) => {
+  let seenNumbers = new Set();
+
+  for (let i = 0; i < arr.length; i++) {
+    let complement = targetSum - arr[i];
+
+    if (seenNumbers.has(complement)) {
+      // A pair with the given sum is found
+      console.log("print arry ==>>", seenNumbers);
+      return true;
+    }
+
+    // Add the current number to the set of seen numbers
+    seenNumbers.add(arr[i]);
+  }
+
+  console.log("print arry ==>>", seenNumbers);
+
+  // No pair with the given sum is found
+  return false;
+};
+
+let checkSumPairreturn = (arr, targetSum) => {
+  let seenNumbers = new Map();
+
+  for (let i = 0; i < arr.length; i++) {
+    let complement = targetSum - arr[i];
+
+    if (seenNumbers.has(complement)) {
+      // A pair with the given sum is found, return the pair of indices
+      return [seenNumbers.get(complement), i];
+    }
+
+    // Add the current number's index to the map of seen indices
+    seenNumbers.set(arr[i], i);
+  }
+
+  // No pair with the given sum is found
+
+  console.log("print arry ==>>", seenNumbers);
+
+  // No pair with the given sum is found
+  return null;
+};
+
+let B4 = [2, 6, 5, 8, 11];
+let sum2 = 14;
+
+// console.log("checkSumPairExist:", checkSumPairExist(B4, sum2), checkSumPairreturn(B3, sum2));
+
+// Dutch national flag problem  solve '0', '1', '2' element sort in array sequeance
+
+const solveSortingBasedonnNUber = (nums) => {
+  let low = 0;
+  let high = nums.length - 1;
+  let i = 0;
+
+  function swap(arr, i, j) {
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+
+  while (i <= high) {
+    if (nums[i] === 0) {
+      swap(nums, i, low);
+      i++;
+      low++;
+    } else if (nums[i] === 2) {
+      swap(nums, i, high);
+      high--;
+    } else {
+      i++;
+    }
+  }
+
+  console.log("nums", nums);
+};
+
+const B5 = [0, 1, 0, 2, 1, 2];
+
+solveSortingBasedonnNUber(B5);
