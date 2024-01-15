@@ -475,4 +475,111 @@ const solveSortingBasedonnNUber = (nums) => {
 
 const B5 = [0, 1, 0, 2, 1, 2];
 
-solveSortingBasedonnNUber(B5);
+// solveSortingBasedonnNUber(B5);
+
+//Q.25) Find the Majority Element that occurs more than N/2 times
+
+const CountMajorityElem = (arr) => {
+  if (arr.length < 2) {
+    return 1;
+  }
+
+  let maxNo = Math.max(...arr);
+
+  let res = new Array(maxNo + 1).fill(0);
+
+  console.log("Print res ===>>", res);
+
+  for (let i = 0; i < arr.length; i++) {
+    res[arr[i]] += 1;
+  }
+  console.log("Print arry updated ==>>", res);
+
+  for (let i = 0; i < res.length; i++) {
+    if (res[i] > arr.length / 2) {
+      console.log("Print length", i);
+    }
+  }
+};
+
+// time Complixty nd Space Complixty = O(n);
+
+const B6 = [4, 4, 2, 4, 3, 4, 4, 3, 2, 4];
+// CountMajorityElem(B6);
+
+// solution second:
+
+const CountMajorityElemSolutionMap = (arr) => {
+  if (arr.length < 2) {
+    return 1;
+  }
+
+  let res = new Map();
+
+  console.log("Print res ===>>", res);
+
+  for (let i = 0; i < arr.length; i++) {
+    if (res.has(arr[i])) {
+      let Countselemnt = res.get(arr[i]);
+      // console.log("Map get", Countselemnt);
+      res.set(arr[i], Countselemnt + 1);
+
+      if (Countselemnt + 1 > arr.length / 2) {
+        console.log("Majority Element:", arr[i]);
+        // return arr[i];
+      }
+    } else {
+      res.set(arr[i], 1);
+    }
+  }
+  console.log("Print arry updated map>", res);
+};
+
+// time Complixty nd Space Complixty = O(n);
+
+// CountMajorityElemSolutionMap(B6);
+
+//Q.55 Kadane’s Algorithm : Maximum Subarray Sum in an Array
+
+const maxMiumSumSubArray = (arr) => {
+  if (arr.length < 2) {
+    return;
+  }
+  let maxMum_Sum = 0;
+  let maxSOFar = Number.MIN_SAFE_INTEGER;
+
+  for (let i = 0; i < arr.length; i++) {
+    maxMum_Sum = maxMum_Sum + arr[i];
+
+    if (arr[i] > maxMum_Sum) {
+      maxMum_Sum = arr[i];
+    }
+
+    // Update the maximum sum so far
+    maxSOFar = Math.max(maxSOFar, maxMum_Sum);
+  }
+
+  // If all elements are negative, set maxSoFar to the maximum element
+  if (maxSOFar === 0) {
+    maxSOFar = Math.max(...arr);
+  }
+
+  console.log("maxSOFar", maxSOFar);
+};
+
+// method Second
+
+const FindMaxSubArray = (arr) => {
+  let countsum = 0;
+  let max = -Infinity;
+
+  for (let i = 0; i < arr.length; i++) {
+    countsum = Math.max(arr[i], arr[i] + countsum);
+    max = Math.max(countsum, max);
+  }
+
+  console.log("Print sum", max);
+};
+let subArray = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+maxMiumSumSubArray(subArray);
+FindMaxSubArray(subArray);
