@@ -581,5 +581,68 @@ const FindMaxSubArray = (arr) => {
   console.log("Print sum", max);
 };
 let subArray = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
-maxMiumSumSubArray(subArray);
-FindMaxSubArray(subArray);
+// maxMiumSumSubArray(subArray);
+// FindMaxSubArray(subArray);
+
+// Q.26) /maximum-difference-between-increasing-elements
+
+var maximumDifference = (nums) => {
+  if (nums.length < 2) {
+    return -1;
+  }
+
+  let minElement = nums[0];
+  let maxDifference = -1;
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] > minElement) {
+      let difference = nums[i] - minElement;
+      maxDifference = Math.max(maxDifference, difference);
+    } else {
+      minElement = nums[i];
+    }
+  }
+
+  console.log(maxDifference);
+};
+
+let B8 = [7, 1, 5, 4];
+
+// maximumDifference(B8);
+
+// Q.30) 2149. Rearrange Array Elements by Sign
+
+var rearrangeArray = function (nums) {
+  const result = [];
+
+  let positiveNumbers = nums.filter((num) => num >= 0);
+  let negativeNumbers = nums.filter((num) => num < 0);
+
+  let i = 0;
+  let j = 0;
+
+  // Ensure the rearranged array begins with a positive integer
+  if (positiveNumbers.length > 0) {
+    result.push(positiveNumbers[i]);
+    i++;
+  }
+
+  // Merge positive and negative numbers in the modified order
+  while (i < positiveNumbers.length || j < negativeNumbers.length) {
+    if (j < negativeNumbers.length) {
+      result.push(negativeNumbers[j]);
+      j++;
+    }
+
+    if (i < positiveNumbers.length) {
+      result.push(positiveNumbers[i]);
+      i++;
+    }
+  }
+
+  console.log("print rearrange array", result);
+};
+
+let B9 = [3, 1, -2, -5, 2, -4];
+
+rearrangeArray(B9);
