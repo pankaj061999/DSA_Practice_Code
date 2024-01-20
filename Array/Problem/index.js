@@ -645,4 +645,126 @@ var rearrangeArray = function (nums) {
 
 let B9 = [3, 1, -2, -5, 2, -4];
 
-rearrangeArray(B9);
+// rearrangeArray(B9);
+
+// Q.30) find next Permutation in array
+let findNextPermutation = (arr) => {
+  let k = arr.length - 2;
+  let n = arr.length;
+
+  if (n === 0 && arr === null) {
+    return;
+  }
+
+  // Common temp variable for swapping
+  let temp;
+  // reverse function
+  let reverseArrayFunc = (arr, start, end) => {
+    while (start < end) {
+      temp = arr[start];
+      arr[start] = arr[end];
+      arr[end] = temp;
+      start++;
+      end--;
+    }
+    return arr;
+  };
+
+  // find k postion in array linear traversing right to left
+  for (let i = n - 1; i > 0; i--) {
+    if (arr[i] <= arr[i - 1]) {
+      k--;
+    }
+  }
+  // if k == -1 then reverse array because this array all permutations are complete
+  if (k === -1) {
+    reverseArrayFunc(arr, 0, n - 1);
+  } else {
+    // else if k is not negative then swap right element with left element
+    for (let i = n - 1; i > 0; i--) {
+      if (arr[i] > arr[i - 1]) {
+        temp = arr[i];
+        arr[i] = arr[i - 1];
+        arr[i - 1] = temp;
+        break;
+      }
+    }
+  }
+
+  // reverseArray given starting index to end index
+  // Reverse the subarray to the right of k
+  // reverseArrayFunc(arr, k + 1, n - 1);
+  console.log("Print array final", arr);
+};
+
+let B10 = [1, 1, 5];
+
+// 3, 2, 1 k =-1 because  this is last permuatcion value so all posiblity done so return k =-1 and reverse it
+// findNextPermutation(B10);
+
+// Q.31 ) Leaders in an Array
+
+let findLeaderofArray = (arr) => {
+  let n = arr.length;
+  let res = [];
+
+  if (n === 0 || arr === null) {
+    return;
+  }
+
+  let maxElement = arr[n - 1]; // Initialize with the last element
+  res.unshift(maxElement);
+  for (let i = n - 2; i >= 0; i--) {
+    if (arr[i] > maxElement) {
+      res.unshift(arr[i]); // Add to the beginning of the result array
+      maxElement = arr[i]; // Update maxElement
+    }
+  }
+
+  console.log("print array ", res);
+};
+
+let B11 = [4, 7, 1, 0];
+
+// findLeaderofArray(B11);
+
+// Q.32) Longest Consecutive Sequence in an Array
+
+const findLongestConsecutiveArray = (arr) => {
+  if (!arr || arr.length === 0) {
+    return [];
+  }
+
+  const numSet = new Set(arr);
+
+  let result = [];
+  let currentSequence = [];
+
+  for (const num of arr) {
+    // Check if the current number is the start of a sequence
+    // console.log("Print set avalle ==>>", numSet, num-1, [num], !numSet.has(num - 1), currentSequence)
+    if (!numSet.has(num - 1)) {
+      currentSequence = [num];
+      // console.log("hii, this loop", currentSequence);
+
+      // Extend the sequence to the right
+      while (numSet.has(currentSequence[currentSequence.length - 1] + 1)) {
+        // console.log("hii, while loop", currentSequence);
+        currentSequence.push(currentSequence[currentSequence.length - 1] + 1);
+      }
+
+      // Update the result if the current sequence is longer
+      if (currentSequence.length > result.length) {
+        // console.log("hii", currentSequence);
+        result = [...currentSequence];
+      }
+
+      // console.log("print after taht result  ")
+    }
+  }
+
+  console.log("Longest consecutive array: ", result);
+};
+
+let B12 = [100, 200, 1, 3, 2, 4];
+findLongestConsecutiveArray(B12);
