@@ -729,42 +729,118 @@ let B11 = [4, 7, 1, 0];
 // findLeaderofArray(B11);
 
 // Q.32) Longest Consecutive Sequence in an Array
-
 const findLongestConsecutiveArray = (arr) => {
   if (!arr || arr.length === 0) {
     return [];
   }
 
   const numSet = new Set(arr);
-
   let result = [];
   let currentSequence = [];
+  let response = [];
 
   for (const num of arr) {
     // Check if the current number is the start of a sequence
-    // console.log("Print set avalle ==>>", numSet, num-1, [num], !numSet.has(num - 1), currentSequence)
     if (!numSet.has(num - 1)) {
       currentSequence = [num];
-      // console.log("hii, this loop", currentSequence);
 
       // Extend the sequence to the right
       while (numSet.has(currentSequence[currentSequence.length - 1] + 1)) {
-        // console.log("hii, while loop", currentSequence);
         currentSequence.push(currentSequence[currentSequence.length - 1] + 1);
       }
 
       // Update the result if the current sequence is longer
       if (currentSequence.length > result.length) {
-        // console.log("hii", currentSequence);
         result = [...currentSequence];
       }
 
-      // console.log("print after taht result  ")
+      console.log("Print nu,set vlue check -->>", result);
     }
   }
 
-  console.log("Longest consecutive array: ", result);
+  // find length
+
+  for (const num of arr) {
+    if (!numSet.has(num - 1)) {
+      console.log("Print array  ==>>");
+      let currentNum = num;
+      let currentStreak = 1;
+
+      while (numSet.has(currentNum + 1)) {
+        currentNum++;
+        currentStreak++;
+      }
+
+      response = Math.max(response, currentStreak);
+    }
+  }
+  console.log("Longest consecutive array: ", response);
+};
+
+// Solution 2.)  simple solution ===>>
+
+const longestSubseqFindlength = (arr) => {
+  if (!arr || arr.length === 0) {
+    return 0;
+  }
+
+  let count = 1;
+  let max = 1;
+
+  arr.sort((a, b) => a - b);
+  console.log("Print sort array ==>>", arr);
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] - arr[i - 1] === 1) {
+      count++;
+      max = Math.max(max, count);
+    } else if (arr[i] === arr[i - 1]) {
+      continue;
+    } else {
+      count = 1;
+    }
+  }
+
+  console.log("Print longgest array ==>>", max);
 };
 
 let B12 = [100, 200, 1, 3, 2, 4];
-findLongestConsecutiveArray(B12);
+// findLongestConsecutiveArray(B12);
+// longestSubseqFindlength(B12);
+
+// Q.32) Set Matrix Zero
+
+const SetMatrixZero = (arr) => {
+  const rows = arr.length;
+  const cols = arr[0].length;
+  const zeroRows = new Set();
+  const zeroCols = new Set();
+
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      if (arr[i][j] === 0) {
+        zeroRows.add(i);
+        zeroCols.add(j);
+      }
+    }
+  }
+
+  // Iterate through the matrix again and set entire rows and columns to zero
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      if (zeroRows.has(i) || zeroCols.has(j)) {
+        arr[i][j] = 0;
+      }
+    }
+  }
+
+  console.log("Print zero convert array ==>>", arr);
+  return arr;
+};
+
+const B13 = [
+  [1, 1, 1],
+  [1, 0, 1],
+  [1, 1, 1],
+];
+
+// SetMatrixZero(B13);
