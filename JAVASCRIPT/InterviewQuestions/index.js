@@ -86,8 +86,8 @@ function filterEvenNumbers(arr) {
 const numbers1 = [1, 2, 3, 4, 5, 6, 7, 8];
 const evenNumbers = filterEvenNumbers(numbers1);
 
-console.log("Original numbers:", numbers1);
-console.log("Even numbers:", evenNumbers);
+// console.log("Original numbers:", numbers1);
+// console.log("Even numbers:", evenNumbers);
 
 // 6.) Write a JavaScript program to calculate the factorial of a given number.
 function calculateFactorial(number) {
@@ -107,7 +107,7 @@ function calculateFactorial(number) {
 // Example usage:
 const num = 5;
 const result1 = calculateFactorial(num);
-console.log(`The factorial of ${num} is: ${result1}`);
+// console.log(`The factorial of ${num} is: ${result1}`);
 
 // 7.) Write a JavaScript function to check if a given number is prime.
 
@@ -132,7 +132,7 @@ function isPrime(number) {
 // Example usage:
 const numcount = 17;
 const finalresult = isPrime(numcount);
-console.log(`${numcount} is prime? ${finalresult}`);
+// console.log(`${numcount} is prime? ${finalresult}`);
 
 // 8.) Write a JavaScript program to find the largest element in a nested array.
 
@@ -158,7 +158,7 @@ const nestedArray = [
 ];
 
 const largest = findLargestInNestedArray(nestedArray);
-console.log("The largest element in the nested array is:", largest);
+// console.log("The largest element in the nested array is:", largest);
 
 // 9.)
 const f1 = (arr) => {
@@ -179,9 +179,9 @@ const f1 = (arr) => {
 
 const arr = [1, 4, 0, 4, 6, 30, 3, 0, 3, 7, 0, 70, 0];
 
-console.log(f1(arr));
+// console.log(f1(arr));
 
-console.log(A);
+// console.log(A);
 
 var A = 3;
 
@@ -189,6 +189,6 @@ const p1 = new Promise((resolve, reject) => {
   resolve("success");
 });
 
-let res = p1.then((data) => console.log(data));
+// let res = p1.then((data) => console.log(data));
 
-console.log(res);
+// console.log(res);
