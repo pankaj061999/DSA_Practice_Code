@@ -192,3 +192,70 @@ const p1 = new Promise((resolve, reject) => {
 // let res = p1.then((data) => console.log(data));
 
 // console.log(res);
+
+/* const object = {
+  message: 'Hello, World!',
+ 
+  logMessage() {
+    console.log(this.message);   }
+};
+ a
+setTimeout(object.logMessage, 1000);
+
+hello world
+ 
+ console.log(pankaj);
+ undefind
+  console.log(pankaj2);
+  
+ 
+ var pankaj = ()=> {
+     
+    console.log("pankaj");
+ }
+ 
+  
+ let pankaj2 = ()=> {
+     
+    console.log("pankaj");
+ }
+ 
+ 
+ const object = {
+  who: 'World',
+ 
+  greet() {
+    return `Hello, ${this.who}!`;
+  },
+ 
+  farewell: () => {
+    return `Goodbye, ${this.who}!`;
+  }
+};
+ 
+console.log(object.greet()); 
+hello world
+console.log(object.farewell());
+
+goodbye world
+
+
+(function() {
+    console.log(1); 
+    setTimeout(function(){console.log(2)}, 1000); 
+    setTimeout(function(){console.log(3)}, 0); 
+    console.log(4);
+})();
+
+1, 4, 3, 2
+
+for (var i = 0; i < 5; i++) {
+  setTimeout(function() { console.log(i); }, i * 1000 );
+}
+
+5
+ */
+
+// var arrayList =  ['a', 'b', 'c', 'd', 'e', 'f'];
+
+// console.log(arrayList.clear())
