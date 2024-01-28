@@ -86,7 +86,4 @@ let Object2 = {
 Object1.__proto__ = commonFunc;
 // console.log(Object1.getAge());
 
-
-
-
-// 
+//
