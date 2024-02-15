@@ -51,4 +51,26 @@ const findLowerBoundElement = (arr, target) => {
 
 const Bin1 = [3, 4, 6, 7, 9, 12, 16, 17];
 let tar = 6;
-findLowerBoundElement(arr, target);
+findLowerBoundElement(arr, tar);
+
+//@pankaj061999 Q.3  Implement Upper Bound
+
+const findUpeerBoundElement = (arr, target) => {
+  let low = 0;
+  let high = arr.length - 1;
+  let upperBoundIndex = -1;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+
+    if (arr[mid] <= target) {
+      low = mid + 1;
+    } else {
+      upperBoundIndex = mid;
+      high = mid - 1;
+    }
+  }
+  console.log("Print Uper bound", upperBoundIndex);
+};
+
+findUpeerBoundElement(arr, tar);
