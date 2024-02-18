@@ -25,7 +25,7 @@ const BinarySearch = (arr, target) => {
 
 const arr = [3, 4, 6, 7, 9, 12, 16, 17];
 let target = 6;
-BinarySearch(arr, target);
+// BinarySearch(arr, target);
 
 // Q.2) Implement Lower Bound
 // Problem Statement: Given a sorted array of N integers and an integer x, write a program to find the lower bound of x.
@@ -51,7 +51,7 @@ const findLowerBoundElement = (arr, target) => {
 
 const Bin1 = [3, 4, 6, 7, 9, 12, 16, 17];
 let tar = 6;
-findLowerBoundElement(arr, tar);
+// findLowerBoundElement(arr, tar);
 
 //@pankaj061999 Q.3  Implement Upper Bound
 
@@ -73,4 +73,29 @@ const findUpeerBoundElement = (arr, target) => {
   console.log("Print Uper bound", upperBoundIndex);
 };
 
-findUpeerBoundElement(arr, tar);
+// findUpeerBoundElement(arr, tar);
+
+// Q.3) @pankaj061999 Search Insert Position
+const SearchInsertPostion = (arr, x) => {
+  let low = 0;
+  let high = arr.length - 1;
+  let insertPosition = 0;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    if (arr[mid] === x) {
+      insertPosition = mid;
+      break;
+    } else if (arr[mid] < x) {
+      low = mid + 1;
+      insertPosition = low; // Adjust insertPosition accordingly
+    } else {
+      high = mid - 1;
+      insertPosition = mid; // Adjust insertPosition accordingly
+    }
+  }
+
+  console.log("Print result ==>>", insertPosition);
+};
+
+SearchInsertPostion(arr, 8);

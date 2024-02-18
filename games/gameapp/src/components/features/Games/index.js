@@ -30,7 +30,7 @@ const GenerateRandomNumbers = () => {
       randomNumbers.add(randomNumber);
     }
     setRandomSelection([...randomNumbers]);
-    setSelectedNumbers([...randomNumbers]); // Automatically select the random numbers
+    // setSelectedNumbers([...randomNumbers]); // Automatically select the random numbers
   };
 
   // Function to handle the click event on the "Clear All" button
