@@ -54,3 +54,26 @@
 
 // Find the longest common prefix among an array of strings.
 // These questions cover a wide range of string manipulation and string-related algorithms, and they are commonly asked in technical interviews for software development positions. Practice solving these problems to improve your problem-solving skills for DSA interviews.
+
+const findMaximumSum = (arr, k) => {
+  let len = arr.length;
+  let max_sum = Number.MIN_SAFE_INTEGER;
+
+  for (let i = 0; i <= len - k; i++) {
+    let sum = 0;
+    for (let j = i; j < i + k; j++) {
+      sum += arr[j];
+    }
+
+    max_sum = Math.max(sum, max_sum);
+  }
+
+  console.log("Maximum sum ==>>", max_sum);
+  return max_sum;
+};
+
+const arr = [1, 4, 2, 10, 23, 3, 1, 0, 20],
+  k = 4;
+
+const result = findMaximumSum(arr, k);
+console.log("Result ==>>", result);
