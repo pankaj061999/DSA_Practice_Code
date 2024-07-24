@@ -21,12 +21,6 @@ const TwonuberSum = (Array, sum) => {
       if (Array[i] + Array[j] === sum) {
         result1.push(i);
         result1.push(j);
-        // console.log(
-        //   "Print two number sum array result ==>>",
-        //   result1,
-        //   i,
-        //   j + 1
-        // );
       }
     }
   }
@@ -35,3 +29,25 @@ const TwonuberSum = (Array, sum) => {
 };
 
 TwonuberSum(A, sum);
+
+var twoSum = function (nums, target) {
+  let map = new Map(); // Create a map to store the numbers and their indices
+
+  for (let i = 0; i < nums.length; i++) {
+    let complement = target - nums[i]; // Calculate the complement of the current number
+
+    if (map.has(complement)) {
+      // If the complement exists in the map, we have found the solution
+      return [map.get(complement), i];
+    }
+
+    // Otherwise, add the current number and its index to the map
+    map.set(nums[i], i);
+  }
+
+  return []; // Return an empty array if no solution is found
+};
+
+const arr = [2, 7, 11, 15];
+const tar = 9;
+console.log(twoSum(arr, tar)); // This will print [0, 1]
