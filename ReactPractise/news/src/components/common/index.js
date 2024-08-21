@@ -1,15 +1,15 @@
-import React, { useRef } from "react";
+import React, { memo, useCallback, useRef } from "react";
 
-export const CommonComponent = () => {
+const CommonComponent = () => {
   const inputRef = useRef();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = useCallback((event) => {
     event.preventDefault();
-    console.log("Print ref", inputRef.current.value);
+    console.log("Print ref 1", inputRef.current.value);
     inputRef.current.style.color = "red";
-  };
+  }, [])
 
-  console.log("Pritn ref", inputRef);
+  console.log("Pritn ref 2", inputRef);
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -19,3 +19,5 @@ export const CommonComponent = () => {
     </div>
   );
 };
+
+export default memo(CommonComponent);
