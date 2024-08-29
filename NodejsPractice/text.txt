@@ -1,0 +1,17 @@
+# Node.js REPL (Read-Eval-Print Loop)
+
+Node.js REPL (Read-Eval-Print Loop) एक interactive shell है जो आपको real-time में JavaScript code लिखने, evaluate करने और उसके results देखने की सुविधा देता है। REPL का उपयोग testing, debugging, और छोटे code snippets को run करने के लिए किया जाता है।
+
+## REPL का मतलब क्या है?
+
+- **R**: **Read** – User द्वारा input किया गया code read किया जाता है।
+- **E**: **Eval** – Input किए गए code को evaluate (execute) किया जाता है।
+- **P**: **Print** – Evaluation का result print (display) किया जाता है।
+- **L**: **Loop** – ये process लगातार loop में चलता रहता है जब तक कि user इसे बंद न कर दे।
+
+## Node.js REPL कैसे Use करें?
+
+Node.js REPL को use करने के लिए आपको बस terminal या command prompt में `node` command type करनी है और enter करना है।
+
+```bash
+$ node
