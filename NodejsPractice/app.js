@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const routes = require("./routes/v1/index");
 const httpStatus = require("http-status");
+const helmet = require("helmet")
 
 app.get("/", (req, res) => {
   res.send("Hello from server!");
@@ -10,6 +11,7 @@ app.get("/", (req, res) => {
 
 // enable cors
 app.use(cors());
+app.use(helmet())
 app.options("*", cors());
 
 // parse json request body
