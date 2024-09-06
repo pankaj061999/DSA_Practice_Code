@@ -7,6 +7,10 @@ import Contact from "@/components/features/Contact";
 import Counter from "@/components/Home/Counter";
 import BoxColourChange from "@/components/features/MachineROund/01";
 import PDFReaderHomePage from "@/components/features/Home";
+import { ToDoListComponent } from "@/components/features/AllMachineRoundQuestions/ToDoList";
+import { CounterComponent } from "@/components/features/AllMachineRoundQuestions/Counter";
+import { FormSubmitComponent } from "@/components/features/AllMachineRoundQuestions/FormSubmit";
+import { SortStaticList } from "@/components/features/AllMachineRoundQuestions/SortList";
 
 const Newcontext = createContext(null);
 
@@ -29,7 +33,11 @@ export default function Home() {
           {/* <Contact /> */}
           {/* <Counter /> */}
           {/* <BoxColourChange /> */}
-          <PDFReaderHomePage />
+          {/* <PDFReaderHomePage /> */}
+          {/* <ToDoListComponent /> */}
+          {/* <CounterComponent /> */}
+          {/* <FormSubmitComponent /> */}
+          <SortStaticList />
         </Newcontext.Provider>
       </div>
     </>
