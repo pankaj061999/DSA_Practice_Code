@@ -1,9 +1,13 @@
+import { ImageCarousel } from "@/components/features/AllMachineRoundQuestions/Medium/ImageCarousel";
 import { AccordionComponent } from "@/components/features/AllMachineRoundQuestions/Medium/Accordian";
+import { SearchableDropdown } from "@/components/features/AllMachineRoundQuestions/Medium/SearchableDropdown";
 import { Inter } from "next/font/google";
 // import { HomeComponent } from "@/components/Home";
 // import CommonComponent from "@/components/common";
 // import { AboutComponent } from "@/components/features/About";
 import { createContext, useState } from "react";
+import { ShoppingCart } from "@/components/features/AllMachineRoundQuestions/Hard/ShoppingCart";
+import InfiniteScrollList from "@/components/features/AllMachineRoundQuestions/Hard/InfiniteScrollingList";
 // import Contact from "@/components/features/Contact";
 // import Counter from "@/components/Home/Counter";
 // import BoxColourChange from "@/components/features/MachineROund/01";
@@ -43,7 +47,11 @@ export default function Home() {
           {/* <SortStaticList /> */}
           {/* <ToggleButton /> */}
           {/* <ToDoListUseLocalStorage /> */}
-          <AccordionComponent />
+          {/* <AccordionComponent /> */}
+          {/* <SearchableDropdown /> */}
+          {/* <ImageCarousel /> */}
+          {/* <ShoppingCart /> */}
+          <InfiniteScrollList />
         </Newcontext.Provider>
       </div>
     </>
