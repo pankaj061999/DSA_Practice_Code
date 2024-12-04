@@ -8,6 +8,7 @@ import { Inter } from "next/font/google";
 import { createContext, useState } from "react";
 import { ShoppingCart } from "@/components/features/AllMachineRoundQuestions/Hard/ShoppingCart";
 import InfiniteScrollList from "@/components/features/AllMachineRoundQuestions/Hard/InfiniteScrollingList";
+import { ProgressBarComponent } from "@/components/features/AllMachineRoundQuestions/Basic/ProgressBar";
 // import Contact from "@/components/features/Contact";
 // import Counter from "@/components/Home/Counter";
 // import BoxColourChange from "@/components/features/MachineROund/01";
@@ -51,7 +52,8 @@ export default function Home() {
           {/* <SearchableDropdown /> */}
           {/* <ImageCarousel /> */}
           {/* <ShoppingCart /> */}
-          <InfiniteScrollList />
+          {/* <InfiniteScrollList /> */}
+          <ProgressBarComponent />
         </Newcontext.Provider>
       </div>
     </>
