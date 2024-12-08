@@ -5,7 +5,7 @@ const checkRecursionOfName = (item, no) => {
     return; // base case: stop recursion when no <= 0
   }
 
-  console.log(item, item, no - 1); // Print the name
+  console.log(item, item, no - 1);
   checkRecursionOfName(item, no - 1);
 };
 
