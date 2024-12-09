@@ -6,7 +6,7 @@ if (newNumber < 0) {
 }
 // console.log("Print Number total length ===>> first",  newNumber.toString().length, Math.floor(Math.log10(newNumber) + 1), Math.log10(newNumber));
 
-const funcCountNmberlength = num => {
+const funcCountNmberlength = (num) => {
   let cnt = 0;
   while (num > 0) {
     num = Math.floor(num / 10);
@@ -25,7 +25,7 @@ const n = 12345;
 
 // wprst case
 
-const finalReverseNumber = num => {
+const finalReverseNumber = (num) => {
   let n1 = "";
 
   for (let i = num.toString().length - 1; i >= 0; i--) {
@@ -45,7 +45,7 @@ const finalReverseNumber = num => {
  * @param {number} x
  * @return {number}
  */
-var reverse = function(x) {
+var reverse = function (x) {
   let isNegative = x < 0;
   // let revNum = 0;
   let num = Math.abs(x).toString().split("");
@@ -79,7 +79,7 @@ var reverse = function(x) {
 
 // Q.3 Check if a number is Palindrome or Not
 
-const checkNumberPalindrome = num => {
+const checkNumberPalindrome = (num) => {
   let isNegative = num < 0;
 
   let n1 = Math.abs(num).toString();
@@ -121,7 +121,7 @@ const findGCD = (num1, num2) => {
 
 // Check if a number is Armstrong Number or not
 
-const checkArmStrongNumber = num => {
+const checkArmStrongNumber = (num) => {
   let n = num.toString().length;
   let sum = 0;
   console.log("Print number length ===>>", n);
@@ -143,7 +143,7 @@ const checkArmStrongNumber = num => {
 
 // const result = checkArmStrongNumber(153);
 
-const findAllDiversor = num => {
+const findAllDiversor = (num) => {
   let divisors = [];
 
   for (let i = 1; i <= Math.sqrt(num); i++) {
@@ -164,7 +164,7 @@ const findAllDiversor = num => {
 // findAllDiversor(36);
 
 // recursion
-const printNameNTime = num => {
+const printNameNTime = (num) => {
   if (num === 0) {
     return;
   }
@@ -178,7 +178,7 @@ const printNameNTime = num => {
 
 // Sum of first N Natural Numbers
 
-const sumOfNumber = num => {
+const sumOfNumber = (num) => {
   if (num === 0) {
     return 0;
   }
@@ -190,7 +190,7 @@ const sumOfNumber = num => {
 
 // Factorial of a Number : Iterative and Recursive
 
-const factorialNNumber = num => {
+const factorialNNumber = (num) => {
   if (num === 0) {
     return 1;
   }
@@ -202,7 +202,7 @@ const factorialNNumber = num => {
 
 // Reverse a given Array
 
-const findReverseArray = arr => {
+const findReverseArray = (arr) => {
   if (arr.length === 0) {
     return [];
   }
@@ -215,4 +215,71 @@ const findReverseArray = arr => {
   );
 };
 
-console.log("Print reverse array ===>>", findReverseArray([1, 2, 3, 4, 5]));
+// console.log("Print reverse array ===>>", findReverseArray([1, 2, 3, 4, 5]));
+
+// Check if the given String is Palindrome or not
+
+const checkStringPalindrome = (str) => {
+  if (str.length <= 1) {
+    return true;
+  }
+
+  const cleanStr = str.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+
+  for (let i = 0; i < Math.floor(cleanStr.length / 2); i++) {
+    if (cleanStr[i] !== cleanStr[cleanStr.length - 1 - i]) {
+      return false; 
+    }
+  }
+  return true;
+
+};
+
+
+// console.log(checkStringPalindrome("madam  aap")); 
+
+// Print Fibonacci Series up to Nth term
+
+// f(0) = 0, f(1) = 1, for more then 1 have use this f(i) = f(i-1) + f(i-2); 
+
+
+const findFibonicSries = (num) => {
+  if (num <= 0) {
+    return [];
+  } else if (num === 1) {
+    return [0];
+  } else if (num === 2) {
+    return [0, 1];
+  } else {
+    const fibSeries = [0, 1];
+    for (let i = 2; i < num; i++) {
+      const nextFib = fibSeries[i - 1] + fibSeries[i - 2];
+      // console.log("Print Fibonic Series ===>>", fibSeries, nextFib, i);
+      fibSeries.push(nextFib);
+    }
+    return fibSeries;
+  }
+};
+// console.log("Print Fibonic Series ===>>", findFibonicSries(10));
+
+
+const onlyNumberReturn = (num)=>{
+  if (num <= 0) {
+    return null;
+  } else if (num === 1) {
+    return 0;
+  } else if (num === 2) {
+    return 1;
+  } else {
+    let a = 0, b = 1, nextFib;
+    for (let i = 2; i <= num; i++) {
+       nextFib = a + b;
+      a = b;
+      b = nextFib
+    }
+    return b
+  }
+
+}
+
+console.log("Print Fibonic Number Value this", onlyNumberReturn(4))
