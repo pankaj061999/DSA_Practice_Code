@@ -23,4 +23,24 @@ const findNumberfrequency = (arr)=> {
 
 const arr = [10,5,10,15,10,5, 1, 1,2];
 
-console.log("Print array Elemenet repation count ===>>", findNumberfrequency(arr))
+// console.log("Print array Elemenet repation count ===>>", findNumberfrequency(arr))
+
+
+// const find Hashing Problem count nuber repeation in givien array;
+
+
+const findduplicateNumberBasedonArray = (arr)=> {
+    if(arr.le === 0){
+        return {}
+    }
+    
+
+}
+
+
+const arr1 = [10,5,10,15,10,5, 1, 1,2];
+
+const quer = [1, 4, 5, 2, 10];
+
+
+console.log("Print findduplicateNumberBasedonArray count ===>>", findduplicateNumberBasedonArray(arr))
