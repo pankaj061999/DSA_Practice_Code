@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <div id="root">
+        <h1 id="test">Pankaj kumar meena</h1>
+        <p>Item 1</p>
+        <p>Item 2</p>
+        <img id="image" src="https://i.postimg.cc/NfdtXtYF/Study-Bg.jpg" alt="old img">
+    </div>
+</head>
+
+<body>
+    <script>
+        const test = document.getElementById("test");
+        const conatiner = document.getElementById("root");
+        // conatiner.removeChild(test);
+        test.innerHTML = `hey after <strong> Pankaj </strong> delete`
+        test.style.color = 'green';
+        test.style.fontSize = '40px';
+        test.style.padding = '10px';
+        test.textContent = "Pankaj Kumar Meena"
+        const getImag = document.getElementById("image");
+        getImag.src = "https://i.postimg.cc/NfdtXtYF/Study-Bg.jpg";
+        getImag.setAttribute("alt", "study image");
+        getImag.removeAttribute("alt")
+        // console.log("Print root value ==>>", test.remove());
+
+
+        // get para
+        const allp = conatiner.querySelectorAll("p")
+        console.log("all para ==>>", allp);
+        allp.forEach((para, index)=> {
+            console.log("para ==>>", para);
+            para.style.color="green";
+            para.style.fontSize="20px";
+
+            para.textContent = `Hey new Name is ${index +1}`
+        })
+    </script>
+
+</body>
+
+</html>
